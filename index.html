@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>shujian-game</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      (function adapt(designWidth, rem2px){
+        var num = designWidth/rem2px;
+        var w = document.documentElement.clientWidth;
+        w = w > designWidth ? designWidth : w;
+        document.documentElement.style.cssText = "font-size:" +  w/num + 'px !important';
+      })(750,100);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
