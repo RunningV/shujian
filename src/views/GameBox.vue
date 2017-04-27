@@ -5,18 +5,25 @@
     <ul v-if="messages.length > 0" ref="messageBox">
       <li v-for="(item, index) in messages" :key="index" v-html="item"></li>
     </ul>
-    <transition>
+    <!-- <transition>
       <div class="send-box" :class="{active: sendBoxActive}">
         <input type="text" v-model="order"><button @click.stop="sendOrder">发送</button>
       </div>
     </transition>
-    <button class="send-box-control" @click.stop.prevent="toggleSendBox">{{ sendBoxActive ? '-' : '+'  }}</button>
+    <button class="send-box-control" @click.stop.prevent="toggleSendBox">{{ sendBoxActive ? '-' : '+'  }}</button> -->
+    <transition>
+      <control-ball></control-ball>
+    </transition>
   </div>
 </template>
 
 <script>
+import ControlBall from '../components/control-ball';
 export default {
   name: 'GameBox',
+  components: {
+    ControlBall,
+  },
   data () {
     return {
       baseCommandActive: false,
@@ -31,7 +38,7 @@ export default {
   methods: {
     message: function(data) {
       console.log(data);
-      var dataArray = data.match(/\.+\r/gm)
+      var dataArray = data.match(/.+[^.]/gm)
       if(dataArray) {
         dataArray = dataArray.filter(item => {
           return !!item;

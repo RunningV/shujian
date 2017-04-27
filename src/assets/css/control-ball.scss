@@ -1,0 +1,26 @@
+.control-ball{
+	box-sizing: border-box;
+	position: fixed;
+	left: 1rem;
+	bottom: 2rem;
+	width: .6rem;
+	height: .6rem;
+	text-align: center;
+	line-height: .6rem;
+	// border: 1px solid red;
+	border-radius: 50%;
+	box-shadow:     
+0 0 0 2px #000 inset,     
+0 0 0 3px #999 inset,     
+0 0 0 9px #fa0 inset,     
+0 0 0 10px #666 inset;
+	font-size: 12px;
+	background-color: rgba(255,255,255, .4);
+	transition: all .3s;
+	&.active{
+		left: 50%;
+		margin-left: -2rem;
+		width: 4rem;
+		height: 4rem;
+	}
+}
